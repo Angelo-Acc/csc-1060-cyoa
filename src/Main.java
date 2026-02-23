@@ -1,111 +1,287 @@
 import java.util.Scanner;
 
-public class Lab1MadLibs {
+public class Main {
     public static void main(String[] args) {
-        System.out.println("MadLibs Lab1 For Fun");
-        System.out.println();
+        System.out.println("--------------------------");
+        System.out.println("Choose your own Adventure!");
+        System.out.println("    Create your Hero");
+        System.out.println("--------------------------");
 
-        //Read in 7 Nouns from user
+        String Warrior = "                           ___\n" +
+                "                          ( ((\n" +
+                "                           ) ))\n" +
+                "  .::.                    / /(\n" +
+                " 'M .-;-.-.-.-.-.-.-.-.-/| ((::::::::::::::::::::::::::::::::::::::::::::::.._\n" +
+                "(J ( ( ( ( ( ( ( ( ( ( ( |  ))   -====================================-      _.>\n" +
+                " `P `-;-`-`-`-`-`-`-`-`-\\| ((::::::::::::::::::::::::::::::::::::::::::::::''\n" +
+                "  `::'                    \\ \\(\n" +
+                "                           ) ))\n" +
+                "                          (_((";
+        String Archer = ".-'` |___________________________//////\n" +
+                "`'-._|                           \\\\\\\\\\\\";
+        String Mage = "         |\n" +
+                "          |   .\n" +
+                "   `.  *  |     .'\n" +
+                "     `. ._|_* .'  .\n" +
+                "   . * .'   `.  *\n" +
+                "-------|     |-------\n" +
+                "   .  *`.___.' *  .\n" +
+                "      .'  |* `.  *\n" +
+                "    .' *  |  . `.\n" +
+                "        . |\n" +
+                "          | ";
+        String Castle = "  / \\               / \\\n" +
+                " /   \\             /   \\\n" +
+                "(_____)           (_____)\n" +
+                " |   |  _   _   _  |   |\n" +
+                " | O |_| |_| |_| |_| O |\n" +
+                " |-  |          _  | - |\n" +
+                " |   |   - _^_     |   |\n" +
+                " |  _|    //|\\\\  - |   |\n" +
+                " |   |   ///|\\\\\\   |  -|\n" +
+                " |-  |_  |||||||   |   |\n" +
+                " |   |   |||||||   |-  |\n" +
+                " |___|___|||||||___|___|\n" +
+                "         (      (\n" +
+                "          \\      \\\n" +
+                "           )      )\n" +
+                "           |      |\n" +
+                "           (      (\n" +
+                "            \\      \\";
+        String Swords = "   .\n" +
+                "  / \\\n" +
+                "  | |\n" +
+                "  | |\n" +
+                "  |.|\n" +
+                "  |.|\n" +
+                "  |:|\n" +
+                "  |:|\n" +
+                "`--8--'\n" +
+                "   8\n" +
+                "   O";
+        String Axes = "  ,:\\      /:.\n" +
+                " //  \\_()_/  \\\\\n" +
+                "||   |    |   ||\n" +
+                "||   |    |   ||\n" +
+                "||   |____|   ||\n" +
+                " \\\\  / || \\  //\n" +
+                "  `:/  ||  \\;'\n" +
+                "       ||\n" +
+                "       ||\n" +
+                "       XX\n" +
+                "       XX\n" +
+                "       XX\n" +
+                "       XX\n" +
+                "       OO\n" +
+                "       `'";
+
+        String Fire = "   .(\n" +
+                "  /%/\\\n" +
+                " (%(%))\n" +
+                ".-'..`-.\n" +
+                "`-'.'`-'";
+        String Ice = "                     *  .  *\n" +
+                "                   . _\\/ \\/_ .\n" +
+                "                    \\  \\ /  /             .      .\n" +
+                "      ..    ..    -==>: X :<==-           _\\/  \\/_\n" +
+                "      '\\    /'      / _/ \\_ \\              _\\/\\/_\n" +
+                "        \\\\//       '  /\\ /\\  '         _\\_\\_\\/\\/_/_/_\n" +
+                "   _.__\\\\\\///__._    *  '  *            / /_/\\/\\_\\ \\\n" +
+                "    '  ///\\\\\\  '                           _/\\/\\_\n" +
+                "        //\\\\                               /\\  /\\\n" +
+                "      ./    \\.             ._    _.       '      '\n" +
+                "      ''    ''             (_)  (_)                  <> \\  / <>\n" +
+                "                            .\\::/.                   \\_\\/  \\/_/\n" +
+                "           .:.          _.=._\\\\//_.=._                  \\\\//\n" +
+                "      ..   \\o/   ..      '=' //\\\\ '='             _<>_\\_\\<>/_/_<>_\n" +
+                "      :o|   |   |o:         '/::\\'                 <> / /<>\\ \\ <>\n" +
+                "       ~ '. ' .' ~         (_)  (_)      _    _       _ //\\\\ _\n" +
+                "           >O<             '      '     /_/  \\_\\     / /\\  /\\ \\\n" +
+                "       _ .' . '. _                        \\\\//       <> /  \\ <>\n" +
+                "      :o|   |   |o:                   /\\_\\\\><//_/\\\n" +
+                "      ''   /o\\   ''     '.|  |.'      \\/ //><\\\\ \\/\n" +
+                "           ':'        . ~~\\  /~~ .       _//\\\\_\n" +
+                "jgs                   _\\_._\\/_._/_      \\_\\  /_/\n" +
+                "                       / ' /\\ ' \\                   \\o/\n" +
+                "       o              ' __/  \\__ '              _o/.:|:.\\o_\n" +
+                "  o    :    o         ' .'|  |'.                  .\\:|:/.\n" +
+                "    '.\\'/.'                 .                 -=>>::>o<::<<=-\n" +
+                "    :->@<-:                 :                   _ '/:|:\\' _\n" +
+                "    .'/.\\'.           '.___/*\\___.'              o\\':|:'/o\n" +
+                "  o    :    o           \\* \\ / */                   /o\\\n" +
+                "       o                 >--X--<\n" +
+                "                        /*_/ \\_*\\\n" +
+                "                      .'   \\*/   '.\n" +
+                "                            :\n" +
+                "                            '";
+        String Longbow = "\n" +
+                "\n" +
+                "                                                       |\n" +
+                "                                                        \\.\n" +
+                "                                                        /|.\n" +
+                "                                                      /  `|.\n" +
+                "                                                    /     |.\n" +
+                "                                                  /       |.\n" +
+                "                                                /         `|.\n" +
+                "                                              /            |.\n" +
+                "                                            /              |.\n" +
+                "                                          /                |.\n" +
+                "     __                                 /                  `|.\n" +
+                "      -\\                              /                     |.\n" +
+                "        \\\\                          /                       |.\n" +
+                "          \\\\                      /                         |.\n" +
+                "           \\|                   /                           |\\\n" +
+                "             \\#####\\          /                             ||\n" +
+                "         ==###########>     /                               ||\n" +
+                "          \\##==      \\    /                                 ||\n" +
+                "     ______ =       =|__/___                                ||\n" +
+                " ,--' ,----`-,__ ___/'  --,-`-==============================##==========>\n" +
+                "\\               '        ##_______ ______   ______,--,____,=##,__\n" +
+                " `,    __==    ___,-,__,--'#'  ==='      `-'              | ##,-/\n" +
+                "   `-,____,---'       \\####\\              |        ____,--\\_##,/\n" +
+                "       #_              |##   \\  _____,---==,__,---'         ##\n" +
+                "        #              ]===--==\\                            ||\n" +
+                "        #,             ]         \\                          ||\n" +
+                "         #_            |           \\                        ||\n" +
+                "          ##_       __/'             \\                      ||\n" +
+                "           ####='     |                \\                    |/\n" +
+                "            ###       |                  \\                  |.\n" +
+                "            ##       _'                    \\                |.\n" +
+                "           ###=======]                       \\              |.\n" +
+                "          ///        |                         \\           ,|.\n" +
+                "          //         |                           \\         |.\n" +
+                "                                                   \\      ,|.\n" +
+                "                                                     \\    |.\n" +
+                "                                                       \\  |.\n" +
+                "                                                         \\|.\n" +
+                "                                                         /.\n" +
+                "                                                        |";
+        String Crossbow = "   (\n" +
+                "    \\\n" +
+                "     )\n" +
+                "##-------->        b'ger\n" +
+                "     )\n" +
+                "    /\n" +
+                "   (";
+
+        System.out.println(Castle);
+
+
+
+        // Read user input to navigate the story
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Please give me a noun: ");
-        String noun1 = scanner.nextLine();
-        System.out.println("noun1 value: " + noun1);
+        // Start the story, enter path selection
 
-        System.out.println("Please give me another noun: ");
-        String noun2 = scanner.nextLine();
-        System.out.println("noun2 value: " + noun2);
+        System.out.println("What path will you choose? (Choose 1,2, or 3");
+        System.out.println("1. Path of the Warrior");
+        System.out.println("2. Path of the Mage");
+        System.out.println("3. Path of the Archer");
+        int answer = scanner.nextInt();
+        System.out.println("Your path is: " + answer);
 
-        System.out.println("Please give me another noun: ");
-        String noun3 = scanner.nextLine();
-        System.out.println("noun3 value: " + noun3);
+        // start the story, choose path
+        if(answer == 1) {
+            System.out.println("You have chosen the path of the Warrior");
+            System.out.println(Warrior);
+            System.out.println("What style of combat would you like to master?");
+            System.out.println("1. Swords");
+            System.out.println("2. Axes");
+            answer = scanner.nextInt();
+            System.out.println("You have chosen to master: " + answer);
 
-        System.out.println("Please give me another noun: ");
-        String noun4 = scanner.nextLine();
-        System.out.println("noun4 value: " + noun4);
-
-        System.out.println("Please give me another noun: ");
-        String noun5 = scanner.nextLine();
-        System.out.println("noun5 value: " + noun5);
-
-        System.out.println("Please give me another noun: ");
-        String noun6 = scanner.nextLine();
-        System.out.println("noun6 value: " + noun6);
-
-        System.out.println("Please give me another noun: ");
-        String noun7 = scanner.nextLine();
-        System.out.println("noun7 value: " + noun7);
-
-        // Get 7 Verbs
-        System.out.println("Please give me another verb: ");
-        String verb1 = scanner.nextLine();
-        System.out.println("verb1 is: " + verb1);
-
-        System.out.println("Please give me another verb: ");
-        String verb2 = scanner.nextLine();
-        System.out.println("verb2 is: " + verb2);
-
-        System.out.println("Please give me another verb: ");
-        String verb3 = scanner.nextLine();
-        System.out.println("verb3 is: " + verb3);
-
-        System.out.println("Please give me another verb: ");
-        String verb4 = scanner.nextLine();
-        System.out.println("verb4 is: " + verb4);
-
-        System.out.println("Please give me another verb: ");
-        String verb5 = scanner.nextLine();
-        System.out.println("verb5 is: " + verb5);
-
-        System.out.println("Please give me another verb: ");
-        String verb6 = scanner.nextLine();
-        System.out.println("verb6 is: " + verb6);
-
-        System.out.println("Please give me another verb: ");
-        String verb7 = scanner.nextLine();
-        System.out.println("verb7 is: " + verb7);
-
-        // Get 7 Adjectives
-        System.out.println("Please give me an adjective:" );
-        String adjective1 = scanner.nextLine();
-        System.out.println("adjective 1 is: " + adjective1);
-
-        System.out.println("Please give me another adjective:" );
-        String adjective2 = scanner.nextLine();
-        System.out.println("adjective 2 is: " + adjective2);
-
-        System.out.println("Please give me another adjective:" );
-        String adjective3 = scanner.nextLine();
-        System.out.println("adjective 3 is: " + adjective3);
-
-        System.out.println("Please give me another adjective:" );
-        String adjective4 = scanner.nextLine();
-        System.out.println("adjective 4 is: " + adjective4);
-
-        System.out.println("Please give me another adjective:" );
-        String adjective5 = scanner.nextLine();
-        System.out.println("adjective 5 is: " + adjective5);
-
-        System.out.println("Please give me another adjective:" );
-        String adjective6 = scanner.nextLine();
-        System.out.println("adjective 6 is: " + adjective6);
-
-        System.out.println("Please give me another adjective:" );
-        String adjective7 = scanner.nextLine();
-        System.out.println("adjective 7 is: " + adjective7);
-
-        // Create The MadLib now
-        System.out.println("One evening, a(n) " + adjective1 + " mage wandered into the ancient " + noun1 + ", unaware");
-        System.out.println("of the power hidden within him. He began to " + verb1 + " through the " + adjective2 + " halls,");
-        System.out.println("holding a glowing " + noun2 + ". Suddenly, the air began to " + verb2 + " as a(n)");
-        System.out.println(adjective3 + "spirit emerged from a floating " + noun3 + ". The mage felt " + adjective4 + " and");
-        System.out.println("tried to " + verb3 + ", but his " + noun4 + " pulsed with energy. He raised a(n) " + adjective5 + " hand");
-        System.out.println("and began to " + verb4 + ", causing a swirl of light to form around a nearby " + noun5 + ". A(n)");
-        System.out.println(adjective6 + " voice echoed as the spirit began to " + verb5 + " through the chamber.");
-        System.out.println("The mage grabbed his " + noun6 + " and chose to " + verb6 + " forward instead of running. ");
-        System.out.println("With a final " + adjective7 + " surge of power, he " + verb7 + " toward the ancient " + noun7 + ", unlocking");
-        System.out.println(" the magic that had always lived inside him.");
+            //Sword
+            if(answer == 1) {
+                System.out.println("Training: Sword Mastery");
+                System.out.println(Swords);
+                System.out.println("You train vigorously, during harsh winters and brutal summers. ");
+                System.out.println("You learn to master Swords. You are now a Sword-Master");
+                System.out.println("Congratulations! You Have successfully completed your training! ");
+                System.exit(0);
 
 
+
+            //Axes
+            } else if(answer == 2) {
+                System.out.println("Training: Axe Master");
+                System.out.println(Axes);
+                System.out.println("You travel far North to learn from the Viking Warriors");
+                System.out.println("After many harsh winters and intense training, you master the Axes.");
+                System.out.println("You are now a Great warrior in wielding Battleaxes");
+                System.out.println("You Go off into the sunset, a Warrior Legend");
+                System.out.println("Congratulations! You Have successfully completed your training! ");
+                System.exit(0);
+
+            }
+        //Mage
+        } else if(answer == 2) {
+            System.out.println("You have chosen the path of the Mage");
+            System.out.println(Mage);
+            System.out.println("What style of combat would you like to master?");
+            System.out.println("1. Fire Magic");
+            System.out.println("2. Ice Magic");
+            answer = scanner.nextInt();
+            System.out.println("You have chosen to master: " + answer);
+
+            //Fire mage
+            if(answer == 1) {
+                System.out.println("Art of Fire");
+                System.out.println(Fire);
+                System.out.println("You study under a great battle mage to learn the art of Fire.");
+                System.out.println("After enduring extreme heat and becoming one with the flame...");
+                System.out.println("You are now Trained as a Fire-Mage");
+                System.out.println("You use your wisdom and power to protect the people.");
+                System.out.println("Congratulations! You Have successfully completed your training! ");
+                System.exit(0);
+            //Frost Mage
+            } else if(answer == 2) {
+                System.out.println("Art of Frost");
+                System.out.println(Ice);
+                System.out.println("You choose the pathy of Ice, therefore live in the highest mountains with Monks.");
+                System.out.println("Your teacher is a master of Frost and you learn to endure the extreme cold");
+                System.out.println("After learning yourself to conjure Blizzards in battle... ");
+                System.out.println("You are now a Frost-Mage");
+                System.out.println("You stop enemies in their tracks, freezing them for thousands of years.");
+                System.out.println("Congratulations! You Have successfully completed your training! ");
+                System.exit(0);
+
+
+
+            }
+        //Archer
+        } else if(answer == 3) {
+            System.out.println("You have chosen the path of the Archer");
+            System.out.println(Archer);
+            System.out.println("What style of combat would you like to master?");
+            System.out.println("1. Longbow");
+            System.out.println("2. Crossbow");
+            answer = scanner.nextInt();
+            System.out.println("You have chosen to master: " + answer);
+            System.exit(0);
+
+            //Longbow
+            if(answer == 1) {
+                System.out.println("You have chosen to master the Longbow");
+                System.out.println(Longbow);
+                System.out.println("You meet a master bowman, who takes you under his wing");
+                System.out.println("After snapping yourself with your bowstring, many scars on your forearms..");
+                System.out.println("You are able to split an arrow in half at the center of a target");
+                System.out.println("You have mastered the bow and arrow.");
+                System.out.println("Congratulations! You Have successfully completed your training! ");
+                System.exit(0);
+
+
+            //Crossbow
+            } else if(answer == 2) {
+                System.out.println("You have chosen to learn the new tech of crossbows");
+                System.out.println(Crossbow);
+                System.out.println("You meet a great Ranged-Tank warrior who takes you as his disciple");
+                System.out.println("They teach you how to wear heavy armor, tanking the heaviest blows...");
+                System.out.println("your mastery is in close combat and medium combat styles");
+                System.out.println("Your aim is flawless and your defense unbreakable!");
+                System.out.println("Congratulations! You Have successfully completed your training! ");
+                System.exit(0);
+            }
+        }
     }
 }
